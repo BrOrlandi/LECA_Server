@@ -1,0 +1,35 @@
+* {
+	text-align: center;
+}
+
+p {
+	text-align:left;
+    color: green;
+    margin: 5px;
+    font-family: Arial;  
+}
+
+p#center {
+	text-align:center;
+    color: green;
+    margin: 5px;
+    font-family: Arial;  
+}
+
+
+p#alt {
+    color: green;
+    margin: 10px;
+    font-family: Arial;  
+    font-size: 10pt;
+}
+
+p#error{
+    color: red;
+    font-style:italic;
+    margin: 10px;
+    font-family: Arial;  
+    font-size: 16pt;
+    font-weight: bold;
+}
+

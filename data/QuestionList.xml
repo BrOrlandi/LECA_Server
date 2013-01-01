@@ -10,7 +10,7 @@
     <Tema>Básico</Tema>
     <Autor></Autor>
     <Enunciado>Como se declara um vetor estático em C?</Enunciado>
-    <Correta>28544</Correta>
+    <Correta>11659</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>int vetor;</Alternativa>
     <Alternativa>int vetor[MAX];</Alternativa>
@@ -32,7 +32,7 @@
     <Tema>Básico</Tema>
     <Autor></Autor>
     <Enunciado>Como declarar uma string alocada em C?</Enunciado>
-    <Correta>37788</Correta>
+    <Correta>57086</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>String str;</Alternativa>
     <Alternativa>char str;</Alternativa>
@@ -56,7 +56,7 @@
     <Tema>Teorico</Tema>
     <Autor></Autor>
     <Enunciado>O que é uma função em C?</Enunciado>
-    <Correta>55695</Correta>
+    <Correta>84137</Correta>
     <Permutar>Nao</Permutar>
     <Alternativa>Parte de um programa.</Alternativa>
     <Alternativa>Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</Alternativa>
@@ -68,7 +68,7 @@
     <Tema>Técnico</Tema>
     <Autor></Autor>
     <Enunciado>A linguagem C tem este nome porque foi a sucessora da linguagem B.</Enunciado>
-    <Correta>9165</Correta>
+    <Correta>13847</Correta>
     <Permutar>Nao</Permutar>
     <Alternativa>Verdadeiro</Alternativa>
     <Alternativa>Falso.</Alternativa>
@@ -77,7 +77,7 @@
     <Tema>Teorico</Tema>
     <Autor></Autor>
     <Enunciado>A instrução #include &lt;stdio.h&gt;  no programa é colocada para que possamos utilizar as funções scanf e printf</Enunciado>
-    <Correta>5656</Correta>
+    <Correta>9165</Correta>
     <Permutar>Nao</Permutar>
     <Alternativa>Verdadeiro</Alternativa>
     <Alternativa>Falso.</Alternativa>
@@ -86,7 +86,7 @@
     <Tema>Basico</Tema>
     <Autor></Autor>
     <Enunciado>Sendo i uma variável inteira, a seguinte chamada a scanf é válida:  scanf(&quot;%d&quot;, i);</Enunciado>
-    <Correta>23406</Correta>
+    <Correta>35360</Correta>
     <Permutar>Nao</Permutar>
     <Alternativa>Verdadeiro</Alternativa>
     <Alternativa>Falso.</Alternativa>
@@ -95,7 +95,7 @@
     <Tema>Técnico</Tema>
     <Autor></Autor>
     <Enunciado>Qual dessas linguagens NÃO possui relação de influência com a linguagem C?</Enunciado>
-    <Correta>34508</Correta>
+    <Correta>22842</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>C++</Alternativa>
     <Alternativa>Pascal</Alternativa>
@@ -107,7 +107,7 @@
     <Tema>Básico</Tema>
     <Autor></Autor>
     <Enunciado>Qual dessas relações de operações matemáticas está incorreta em C?</Enunciado>
-    <Correta>51761</Correta>
+    <Correta>21142</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>* Multiplicação</Alternativa>
     <Alternativa>% Resto da Divisão</Alternativa>
@@ -118,7 +118,7 @@
     <Tema>Algoritmo</Tema>
     <Autor></Autor>
     <Enunciado>Quantos números primos há de 1 à 101?</Enunciado>
-    <Correta>14095</Correta>
+    <Correta>34508</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>30</Alternativa>
     <Alternativa>26</Alternativa>
@@ -136,7 +136,7 @@ for(i=10; i&amp;gt;0;i--)
      x *= i;
 }
 O valor de x equivale a:</Enunciado>
-    <Correta>43454</Correta>
+    <Correta>17749</Correta>
     <Permutar>Sim</Permutar>
     <Alternativa>0</Alternativa>
     <Alternativa>10</Alternativa>
