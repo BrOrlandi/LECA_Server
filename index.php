@@ -4,6 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>LECA Gráficos</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 	<body>
 		<p id="center">
@@ -12,7 +14,7 @@
 <!--		<form enctype="multipart/form-data" action="index.php" method="post"> -->
 		<form enctype="multipart/form-data" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post">
 			<input type="file" name="questionlistfile" />
-			<input type="submit" name="enviar" value="Enviar Lista" />
+			<input type="submit" name="enviar" value="Enviar Lista"/>
 		</form>
 		<p id="center">
 			Envie aqui arquivos dos resultados obtidos
@@ -20,7 +22,7 @@
 <!--        <form enctype="multipart/form-data" action="index.php" method="post"> -->
         <form enctype="multipart/form-data" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post">
             <input type="file" name="resultadofile" />
-            <input type="submit" name="enviar" value="Enviar Resultado" />
+            <input type="submit" name="enviar" value="Enviar Resultado"/>
         </form>
 		<?php
 		
