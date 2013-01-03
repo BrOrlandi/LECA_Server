@@ -17,16 +17,25 @@
 		<p id="center">
 			Envie aqui arquivos dos resultados obtidos
 		</p>
-<!--		<form enctype="multipart/form-data" action="index.php" method="post"> -->
-		<form enctype="multipart/form-data" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post">
-			<input type="file" name="resultadofile" />
-			<input type="submit" name="enviar" value="Enviar Resultado" />
-		</form>
+<!--        <form enctype="multipart/form-data" action="index.php" method="post"> -->
+        <form enctype="multipart/form-data" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" method="post">
+            <input type="file" name="resultadofile" />
+            <input type="submit" name="enviar" value="Enviar Resultado" />
+        </form>
 		<?php
 		
 		
 ///------------------------------------------------------------------------------------
-
+/*
+// Criar uma pasta data e altera o usuário para nobody, "sudo chown nobody data"
+        define("DATADIR","data");
+        // criar a pasta data se não existir.
+        if(!file_exists(DATADIR)){
+            echo "Pasta criada!";
+            mkdir(DATADIR, 0755);
+        }
+ */
+        
 		define("QUESTIONLIST", "data/QuestionList.xml");
 		define("RESULTS", "data/ResultsTemp.xml");
 		define("MYDATABASE", "ListaDeQuestoes");
@@ -35,48 +44,48 @@
 		$qfile = NULL;
 		if (isset($_FILES['questionlistfile'])) {
 			$qfile = $_FILES['questionlistfile'];
-		}
-		if ($qfile != NULL && $qfile['error'] == UPLOAD_ERR_NO_FILE) {
-			echo "<p><br/>Nenhum arquivo foi selecionado para enviar!<br/></p>";
-		} else if ($qfile != NULL && $qfile['error'] == UPLOAD_ERR_OK) {
-			//salva arquivo no servidor
-			$file = fopen(QUESTIONLIST, "w");
-			fwrite($file, file_get_contents($qfile['tmp_name']));
-			fclose($file);
-			//le o arquivo como XML
-			$sxeList = simplexml_load_file(QUESTIONLIST);
-			if (!$sxeList)
-				echo "<p>ERRO de XML!</p>";
-
-			// cria o banco de dados
-			$db = createDataBase();
-
-			//para cada questão encontrada adicionar no banco
-			foreach ($sxeList->Questao as $q) {
-				insere_questao_db($q, $db);
-			}
-
-			
-			// debug ver questoes e alternativas
-			echo "<br/>";
-			$r = mysql_query_b("SELECT * FROM `questions`", $db);
-			//echo $res;
-			while ($r2 = mysql_fetch_array($r)) {
-				echo "<p>" . $r2['enunciado'] . "</p>";
-				$r3 = mysql_query_b("SELECT * FROM  `alternativas` WHERE  `questionID` =" . $r2['qID'], $db);
-				while ($r4 = mysql_fetch_array($r3)) {
-					echo "<p id=\"alt\">" . $r4['texto'] . "</p>";
-				}
-				mysql_free_result($r3);
-				echo "<br/>";
-			}
-			mysql_free_result($r);
-			//*/
-
-			//$str = mysql_result($res, 1,"enunciado");
-			//echo "<br/>a<br/>";
-			
-			echo "<p><br/>Lista de exercicios enviada!<br/></p>";
+            if($qfile['error'] == UPLOAD_ERR_NO_FILE) {
+			    echo "<p><br/>Nenhum arquivo foi selecionado para enviar!<br/></p>";
+    		} else if ($qfile['error'] == UPLOAD_ERR_OK) {
+    			//salva arquivo no servidor
+    			$file = fopen(QUESTIONLIST, "w");
+    			fwrite($file, file_get_contents($qfile['tmp_name']));
+    			fclose($file);
+    			//le o arquivo como XML
+    			$sxeList = simplexml_load_file(QUESTIONLIST);
+    			if (!$sxeList)
+    				echo "<p>ERRO de XML!</p>";
+    
+    			// cria o banco de dados
+    			$db = createDataBase();
+    
+    			//para cada questão encontrada adicionar no banco
+    			foreach ($sxeList->Questao as $q) {
+    				insere_questao_db($q, $db);
+    			}
+    
+    			
+    			// debug ver questoes e alternativas
+    			echo "<br/>";
+    			$r = mysql_query_b("SELECT * FROM `questions`", $db);
+    			//echo $res;
+    			while ($r2 = mysql_fetch_array($r)) {
+    				echo "<p>" . $r2['enunciado'] . "</p>";
+    				$r3 = mysql_query_b("SELECT * FROM  `alternativas` WHERE  `questionID` =" . $r2['qID'], $db);
+    				while ($r4 = mysql_fetch_array($r3)) {
+    					echo "<p id=\"alt\">" . $r4['texto'] . "</p>";
+    				}
+    				mysql_free_result($r3);
+    				echo "<br/>";
+    			}
+    			mysql_free_result($r);
+    			//*/
+    
+    			//$str = mysql_result($res, 1,"enunciado");
+    			//echo "<br/>a<br/>";
+    			
+    			echo "<p><br/>Lista de exercicios enviada!<br/></p>";
+    		}
 		}
 
 ///------------------------------------------------------------------------------------
@@ -84,63 +93,80 @@
 		$rfile = NULL;
 		if (isset($_FILES['resultadofile'])) {
 			$rfile = $_FILES['resultadofile'];
-		}
-		if ($rfile != NULL && $rfile['error'] == UPLOAD_ERR_NO_FILE) {
-			echo "<p><br/>Nenhum arquivo foi selecionado para enviar!<br/></p>";
-		} else if ($rfile != NULL && $rfile['error'] == UPLOAD_ERR_OK) {
-			//salva arquivo no servidor
-			$file = fopen(RESULTS, "w");
-			
-			fwrite($file, file_get_contents($rfile['tmp_name']));
-			fclose($file);
-			//le o arquivo como XML
-			$sxeList = simplexml_load_file(RESULTS);
-			if (!$sxeList)
-				echo "<p>ERRO de XML!</p>";
+    		if ($rfile['error'] == UPLOAD_ERR_NO_FILE) {
+    			echo "<p><br/>Nenhum arquivo foi selecionado para enviar!<br/></p>";
+    		} else if ($rfile['error'] == UPLOAD_ERR_OK) {
+    			//salva arquivo no servidor
+    			$file = fopen(RESULTS, "w");
+    			
+    			fwrite($file, file_get_contents($rfile['tmp_name']));
+    			fclose($file);
+    			//le o arquivo como XML
+    			$sxeList = simplexml_load_file(RESULTS);
+    			if (!$sxeList)
+    				echo "<p>ERRO de XML!</p>";
+    
+    			// conecta o banco de dados
+    			$mysql = mysql_connect("localhost", "root", "einstein");
+    			mysql_select_db(MYDATABASE, $mysql);
+    
+                insertResults($sxeList, $mysql);
 
-			// conecta o banco de dados
-			$mysql = mysql_connect("localhost", "root", "einstein");
-			mysql_select_db(MYDATABASE, $mysql);
-
-			$sql = 'INSERT INTO `ListaDeQuestoes`.`users` (`name`) VALUES (\''. $sxeList['Nome'] .'\');';
-			mysql_query_b($sql,$mysql);
-			
-			//pega o user ID atual
-			$result = mysql_query_b("SELECT `ID` FROM `users` WHERE `name` LIKE '" . $sxeList['Nome']."'",$mysql);
-			$row = mysql_fetch_array($result);
-			$userid = 0 + $row['ID'];
-			mysql_free_result($result);
-			
-
-			//var_dump($sxeList);
-			echo "<br/><br/>";
-			//var_dump($sxeList->ListaQuestoes->Questao);
-			
-			//para cada questão
-			foreach ($sxeList->ListaQuestoes->Questao as $q) {
-				//var_dump($q);
-				$qID = 0 + $q['id'];
-				//echo gettype($qID); // integer
-				$assinalouPos = $sxeList->R[$qID]-1;
-				$inc = $qID+1;
-				$sql = "SELECT * FROM `questions` WHERE `qID` =" . $inc;
-				$r = mysql_query_b($sql,$mysql);
-				$question = mysql_fetch_array($r);
-				mysql_free_result($r);
-				echo "<p>" . $question['enunciado'] . "</p>";
-				$sql = "SELECT * FROM `alternativas` WHERE `questionID` =" . $inc . " AND `alternativeID`=". $q->Alternativa[$assinalouPos]['id'];
-				$r = mysql_query_b($sql,$mysql);
-				$alt = mysql_fetch_array($r);
-				mysql_free_result($r);
-				echo "<p id=\"alt\">" . $alt['texto'] . "</p>";
-				
-				$sql = "REPLACE INTO `respostasAlternativas` (`userID`,`qID`,`assinalada`) VALUES ('". $userid . "','". $inc . "','". $q->Alternativa[$assinalouPos]['id'] . "')";
-				mysql_query_b($sql,$mysql);
-				//echo mysql_error();
+                echo "<br/><br/>";
+    			
+    			
+    			
+    			echo "<p><br/>Resultados enviados!<br/></p>";
 			}
-			
-			echo "<p><br/>Resultados enviados!<br/></p>";
 		}
+
+        function insertResults($xml_text, $db){
+            //procura se o usuario ja existe
+            $result = mysql_query_b("SELECT `ID` FROM `users` WHERE `name`='" . $xml_text['Nome']."'",$db);
+            $row = mysql_fetch_array($result);
+            if($row == FALSE){
+                //insere o usuario
+                $sql = 'INSERT INTO `ListaDeQuestoes`.`users` (`name`) VALUES (\''. $xml_text['Nome'] .'\');';
+                mysql_query_b($sql,$db);
+                //pega o user ID atual
+                $result = mysql_query_b("SELECT `ID` FROM `users` WHERE `name`='" . $xml_text['Nome']."'",$db);
+                $row = mysql_fetch_array($result);
+            }
+
+            $userid = 0 + $row['ID'];
+            mysql_free_result($result);
+            
+            //para cada questão
+            foreach ($xml_text->ListaQuestoes->Questao as $q) {
+                $qID = 0 + $q['id'];
+                $assinalouPos = $xml_text->R[$qID]-1;
+                $inc = $qID+1;
+                
+                // mostra a questao
+                $sql = "SELECT * FROM `questions` WHERE `qID` =" . $inc;
+                $r = mysql_query_b($sql,$db);
+                $question = mysql_fetch_array($r);
+                mysql_free_result($r);
+                echo "<p>" . $question['enunciado'] . "</p>";
+                //mostra a alternativa assinalada
+                $sql = "SELECT * FROM `alternativas` WHERE `questionID` =" . $inc . " AND `alternativeID`=". $q->Alternativa[$assinalouPos]['id'];
+                $r = mysql_query_b($sql,$db);
+                $alt = mysql_fetch_array($r);
+                mysql_free_result($r);
+                echo "<p id=\"alt\">" . $alt['texto'] . "</p>";
+                
+                //calcula e mostra o numero de tentativas da questao
+                $num = 0 + $q->Tentativas;
+                $tentativas = decode($q -> Enunciado, $num);
+                echo "<p id=\"alt\">" . $tentativas . " tentativas.</p>";
+        
+                $sql = "REPLACE INTO `respostasAlternativas` (`userID`,`qID`,`assinalada`, `tentativas`) VALUES ('". $userid . "','". $inc . "','". $q->Alternativa[$assinalouPos]['id'] . "','".  $tentativas . "')";
+                mysql_query_b($sql,$db);
+                //echo mysql_error();
+            }
+            
+        }
+
 ///------------------------------------------------------------------------------------
 		
 		function mysql_query_b($sql,$db){
@@ -179,17 +205,12 @@
 					name CHAR(255) NOT NULL,
 					UNIQUE INDEX (name));';
 			mysql_query_b($sql, $mysql);
-			
-			$sql = 'CREATE TABLE respostasQuestoes (
-					userID INTEGER,
-					qID INTEGER,
-					tentativas INTEGER);';
-			mysql_query_b($sql, $mysql);
-			
+						
 			$sql = 'CREATE TABLE respostasAlternativas (
 					userID INTEGER,
 					qID INTEGER,
-					assinalada INTEGER,
+                    assinalada INTEGER,
+                    tentativas INTEGER,
 					PRIMARY KEY (userID, qID));';
 			mysql_query_b($sql, $mysql);
 
@@ -206,7 +227,6 @@
 			mysql_query_b('TRUNCATE TABLE questions', $mysql);
 			mysql_query_b('TRUNCATE TABLE alternativas', $mysql);
 			mysql_query_b('TRUNCATE TABLE users', $mysql);
-			mysql_query_b('TRUNCATE TABLE respostasQuestoes', $mysql);
 			mysql_query_b('TRUNCATE TABLE respostasAlternativas', $mysql);
 			return $mysql;
 		}
