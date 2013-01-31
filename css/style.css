@@ -1,0 +1,67 @@
+* {
+	text-align: center;
+}
+
+p {
+	text-align:left;
+    color: green;
+    margin: 5px;
+    font-family: Arial;  
+}
+
+p.center {
+	text-align:center;
+    color: green;
+    margin: 5px;
+    font-family: Arial;  
+}
+
+
+p#alt {
+    color: green;
+    margin: 10px;
+    font-family: Arial;  
+    font-size: 10pt;
+}
+
+p#error{
+    color: red;
+    font-style:italic;
+    margin: 10px;
+    font-family: Arial;  
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.notify{
+	background-color: #fff;
+	border: 2px solid #008000;
+	width: 200px;
+	text-align:center;
+	padding: 5px;
+	border-radius: 15px;
+}
+
+#chartsbutton{
+	background-color: #c0e9c1;
+	border: 2px solid #008000;
+	color: #008000;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight:bold;
+	padding: 15px;
+	border-radius: 15px;
+	margin: 15px;
+	width: 150px;
+	left: 50%;
+	margin-left: -75px;
+	position: relative;
+	cursor: pointer;
+}
+
+#chart_draw{
+	left: 50%;
+	margin-left: -400px;
+	position: relative;	
+}
+

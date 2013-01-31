@@ -1,18 +1,18 @@
-<Usuario Nome="Teste 3">
+<Usuario Nome="TEster 2">
   <tamanhoR>12</tamanhoR>
   <UltimaQuestao>11</UltimaQuestao>
-  <R>2</R>
-  <R>4</R>
   <R>4</R>
   <R>3</R>
+  <R>3</R>
   <R>2</R>
-  <R>2</R>
+  <R>5</R>
+  <R>1</R>
   <R>1</R>
   <R>2</R>
-  <R>4</R>
-  <R>2</R>
   <R>3</R>
-  <R>2</R>
+  <R>3</R>
+  <R>5</R>
+  <R>1</R>
   <ListaQuestoes Titulo="Lista de exercicios de C">
     <Tema>Programação/Computação</Tema>
     <Autor>Bruno Orlandi</Autor>
@@ -20,54 +20,26 @@
     <Obs>Para iniciantes em linguagem C</Obs>
     <Idioma>Português - Brasil</Idioma>
     <Avaliacao>0</Avaliacao>
-    <Questao Titulo="Vetor estático" id="0">
-      <Tema>Básico</Tema>
-      <Autor></Autor>
-      <Enunciado>Como se declara um vetor estático em C?</Enunciado>
-      <Correta>28544</Correta>
-      <Tentativas>11659</Tentativas>
-      <Alternativa id="2">int *vetor;</Alternativa>
-      <Alternativa id="1">int vetor[MAX];</Alternativa>
-      <Alternativa id="3">int []vetor;</Alternativa>
-      <Alternativa id="0">int vetor;</Alternativa>
-    </Questao>
-    <Questao Titulo="" id="6">
-      <Tema>Teorico</Tema>
-      <Autor></Autor>
-      <Enunciado>A instrução #include &lt;stdio.h&gt;  no programa é colocada para que possamos utilizar as funções scanf e printf</Enunciado>
-      <Correta>13847</Correta>
-      <Tentativas>11311</Tentativas>
-      <Alternativa id="0">Verdadeiro</Alternativa>
-      <Alternativa id="1">Falso.</Alternativa>
-    </Questao>
-    <Questao Titulo="" id="7">
-      <Tema>Basico</Tema>
-      <Autor></Autor>
-      <Enunciado>Sendo i uma variável inteira, a seguinte chamada a scanf é válida:  scanf(&quot;%d&quot;, i);</Enunciado>
-      <Correta>35360</Correta>
-      <Tentativas>53039</Tentativas>
-      <Alternativa id="0">Verdadeiro</Alternativa>
-      <Alternativa id="1">Falso.</Alternativa>
-    </Questao>
-    <Questao Titulo="" id="9">
-      <Tema>Básico</Tema>
-      <Autor></Autor>
-      <Enunciado>Qual dessas relações de operações matemáticas está incorreta em C?</Enunciado>
-      <Correta>51761</Correta>
-      <Tentativas>14095</Tentativas>
-      <Alternativa id="1">% Resto da Divisão</Alternativa>
-      <Alternativa id="3">/ Divisão</Alternativa>
-      <Alternativa id="2">^ Potenciação</Alternativa>
-      <Alternativa id="0">* Multiplicação</Alternativa>
-    </Questao>
     <Questao Titulo="" id="5">
       <Tema>Técnico</Tema>
       <Autor></Autor>
       <Enunciado>A linguagem C tem este nome porque foi a sucessora da linguagem B.</Enunciado>
       <Correta>13847</Correta>
-      <Tentativas>27692</Tentativas>
+      <Tentativas>18330</Tentativas>
       <Alternativa id="0">Verdadeiro</Alternativa>
       <Alternativa id="1">Falso.</Alternativa>
+    </Questao>
+    <Questao Titulo="Algoritmo números primos" id="10">
+      <Tema>Algoritmo</Tema>
+      <Autor></Autor>
+      <Enunciado>Quantos números primos há de 1 à 101?</Enunciado>
+      <Correta>34508</Correta>
+      <Tentativas>14095</Tentativas>
+      <Alternativa id="2">17</Alternativa>
+      <Alternativa id="4">23</Alternativa>
+      <Alternativa id="0">30</Alternativa>
+      <Alternativa id="3">25</Alternativa>
+      <Alternativa id="1">26</Alternativa>
     </Questao>
     <Questao Titulo="Algoritmo" id="11">
       <Tema>Algoritmo</Tema>
@@ -79,54 +51,19 @@ for(i=10; i&amp;gt;0;i--)
      x *= i;
 }
 O valor de x equivale a:</Enunciado>
-      <Correta>17749</Correta>
+      <Correta>28764</Correta>
       <Tentativas>28970</Tentativas>
-      <Alternativa id="1">10</Alternativa>
-      <Alternativa id="3">9!</Alternativa>
-      <Alternativa id="0">0</Alternativa>
       <Alternativa id="2">10!</Alternativa>
+      <Alternativa id="0">0</Alternativa>
+      <Alternativa id="3">9!</Alternativa>
+      <Alternativa id="1">10</Alternativa>
       <Alternativa id="4">10! - 1</Alternativa>
-    </Questao>
-    <Questao Titulo="String" id="2">
-      <Tema>Básico</Tema>
-      <Autor></Autor>
-      <Enunciado>Como declarar uma string alocada em C?</Enunciado>
-      <Correta>23317</Correta>
-      <Tentativas>42815</Tentativas>
-      <Alternativa id="2">char *str;</Alternativa>
-      <Alternativa id="1">char str;</Alternativa>
-      <Alternativa id="3">char str[MAX];</Alternativa>
-      <Alternativa id="0">String str;</Alternativa>
-    </Questao>
-    <Questao Titulo="Algoritmo números primos" id="10">
-      <Tema>Algoritmo</Tema>
-      <Autor></Autor>
-      <Enunciado>Quantos números primos há de 1 à 101?</Enunciado>
-      <Correta>14095</Correta>
-      <Tentativas>51761</Tentativas>
-      <Alternativa id="2">17</Alternativa>
-      <Alternativa id="1">26</Alternativa>
-      <Alternativa id="0">30</Alternativa>
-      <Alternativa id="3">25</Alternativa>
-      <Alternativa id="4">23</Alternativa>
-    </Questao>
-    <Questao Titulo="" id="8">
-      <Tema>Técnico</Tema>
-      <Autor></Autor>
-      <Enunciado>Qual dessas linguagens NÃO possui relação de influência com a linguagem C?</Enunciado>
-      <Correta>34508</Correta>
-      <Tentativas>22842</Tentativas>
-      <Alternativa id="3">PHP</Alternativa>
-      <Alternativa id="4">D</Alternativa>
-      <Alternativa id="0">C++</Alternativa>
-      <Alternativa id="1">Pascal</Alternativa>
-      <Alternativa id="2">Java</Alternativa>
     </Questao>
     <Questao Titulo="Funções" id="4">
       <Tema>Teorico</Tema>
       <Autor></Autor>
       <Enunciado>O que é uma função em C?</Enunciado>
-      <Correta>55695</Correta>
+      <Correta>84137</Correta>
       <Tentativas>22278</Tentativas>
       <Alternativa id="0">Parte de um programa.</Alternativa>
       <Alternativa id="1">Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</Alternativa>
@@ -134,18 +71,69 @@ O valor de x equivale a:</Enunciado>
       <Alternativa id="3">Um bloco de código que pode receber parâmetros, processá-los e retornar alguma coisa.</Alternativa>
       <Alternativa id="4">Todas opções acima.</Alternativa>
     </Questao>
+    <Questao Titulo="String" id="2">
+      <Tema>Básico</Tema>
+      <Autor></Autor>
+      <Enunciado>Como declarar uma string alocada em C?</Enunciado>
+      <Correta>37788</Correta>
+      <Tentativas>28544</Tentativas>
+      <Alternativa id="0">String str;</Alternativa>
+      <Alternativa id="1">char str;</Alternativa>
+      <Alternativa id="3">char str[MAX];</Alternativa>
+      <Alternativa id="2">char *str;</Alternativa>
+    </Questao>
+    <Questao Titulo="Vetor estático" id="0">
+      <Tema>Básico</Tema>
+      <Autor></Autor>
+      <Enunciado>Como se declara um vetor estático em C?</Enunciado>
+      <Correta>11659</Correta>
+      <Tentativas>18894</Tentativas>
+      <Alternativa id="0">int vetor;</Alternativa>
+      <Alternativa id="2">int *vetor;</Alternativa>
+      <Alternativa id="3">int []vetor;</Alternativa>
+      <Alternativa id="1">int vetor[MAX];</Alternativa>
+    </Questao>
     <Questao Titulo="Espaço Alocado" id="3">
       <Tema>Básico</Tema>
       <Autor></Autor>
       <Enunciado>Qual destes não podem variar no espaço alocado?</Enunciado>
-      <Correta>45684</Correta>
-      <Tentativas>34508</Tentativas>
-      <Alternativa id="1">struct *estrutura;</Alternativa>
-      <Alternativa id="3">int a;</Alternativa>
-      <Alternativa id="0">struct estrutura;</Alternativa>
+      <Correta>69014</Correta>
+      <Tentativas>45684</Tentativas>
       <Alternativa id="2">int *a;</Alternativa>
-      <Alternativa id="5">void *p;</Alternativa>
+      <Alternativa id="3">int a;</Alternativa>
       <Alternativa id="4">int **matriz;</Alternativa>
+      <Alternativa id="5">void *p;</Alternativa>
+      <Alternativa id="1">struct *estrutura;</Alternativa>
+      <Alternativa id="0">struct estrutura;</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="7">
+      <Tema>Basico</Tema>
+      <Autor></Autor>
+      <Enunciado>Sendo i uma variável inteira, a seguinte chamada a scanf é válida:  scanf(&quot;%d&quot;, i);</Enunciado>
+      <Correta>23406</Correta>
+      <Tentativas>21664</Tentativas>
+      <Alternativa id="0">Verdadeiro</Alternativa>
+      <Alternativa id="1">Falso.</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="9">
+      <Tema>Básico</Tema>
+      <Autor></Autor>
+      <Enunciado>Qual dessas relações de operações matemáticas está incorreta em C?</Enunciado>
+      <Correta>21142</Correta>
+      <Tentativas>35236</Tentativas>
+      <Alternativa id="0">* Multiplicação</Alternativa>
+      <Alternativa id="3">/ Divisão</Alternativa>
+      <Alternativa id="2">^ Potenciação</Alternativa>
+      <Alternativa id="1">% Resto da Divisão</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="6">
+      <Tema>Teorico</Tema>
+      <Autor></Autor>
+      <Enunciado>A instrução #include &lt;stdio.h&gt;  no programa é colocada para que possamos utilizar as funções scanf e printf</Enunciado>
+      <Correta>5656</Correta>
+      <Tentativas>11311</Tentativas>
+      <Alternativa id="0">Verdadeiro</Alternativa>
+      <Alternativa id="1">Falso.</Alternativa>
     </Questao>
     <Questao Titulo="Bytes para um int" id="1">
       <Tema>Técnico</Tema>
@@ -157,6 +145,18 @@ O valor de x equivale a:</Enunciado>
       <Alternativa id="1">2 bytes</Alternativa>
       <Alternativa id="2">4 bytes</Alternativa>
       <Alternativa id="3">8 bytes</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="8">
+      <Tema>Técnico</Tema>
+      <Autor></Autor>
+      <Enunciado>Qual dessas linguagens NÃO possui relação de influência com a linguagem C?</Enunciado>
+      <Correta>34508</Correta>
+      <Tentativas>34508</Tentativas>
+      <Alternativa id="3">PHP</Alternativa>
+      <Alternativa id="4">D</Alternativa>
+      <Alternativa id="1">Pascal</Alternativa>
+      <Alternativa id="2">Java</Alternativa>
+      <Alternativa id="0">C++</Alternativa>
     </Questao>
   </ListaQuestoes>
 </Usuario>
