@@ -19,9 +19,9 @@
 	
 	
     <!-- CSS -->
-    <link href="css/leca.css" rel="stylesheet">
     <link href="bootstrap/css/magic-bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/leca.css" rel="stylesheet">
   </head>
 
 <body>
@@ -35,6 +35,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<a data-toggle="tooltip" title="Listas de Exercícios com Correção Automática" href="#"><img src="img/webicon-144.png" height="40" width="40" style="float:left; margin-right: 20px;" style=""/></a>
 					<a class="brand" data-toggle="tooltip" title="Listas de Exercícios com Correção Automática" href="#">LECA</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
@@ -90,9 +91,10 @@
 	    		<div class="tab-pane" id="tab1">
 	    			
 	    			<form class="form-horizontal" enctype="multipart/form-data" action="uploadlist.php" method="post">
-	    				<legend><h3>Enviar nova Lista de Exercícios:</h3></legend>
-						<input type="file" name="listaexercicios" /><br>
-	      				<button type="submit" class="btn btn-primary">Enviar</button>
+	    				<legend>
+	    					<h3>Nova Lista de Exercícios: </h3>  
+	    				</legend>
+	    				<a href="#submeter" data-toggle="modal" class="btn btn-large btn-primary" type="button">Submeter Lista de Exercícios</a>
 					</form>
 
 		
@@ -142,15 +144,7 @@
 						    <p class="breadcrumb">Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</p>
 						    <p class="breadcrumb">Uma estrutura da linguagem C que pode ser utilizada para que um programa fique mais organizado.</p>
 						    <p class="breadcrumb">Um bloco de código que pode receber parâmetros, processá-los e retornar alguma coisa.</p>
-						    <p class="breadcrumb">Todas opções acima.<span class="label label-success">Correta</span></p>
-						    
-						    
-						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						    
-						    
+						    <p class="breadcrumb alternativa-correta">Todas opções acima.</p>
 						</div>
 					</div>
 				</div>
@@ -183,6 +177,34 @@
 	    </div>
 	  </div>
 	</div>
+
+
+<!-- Modal -->
+			<div id="submeter" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						×
+					</button>
+					<h3 id="myModalLabel">Submeter Lista de Exercícios</h3>
+				</div>
+				
+		        <form class="form-horizontal" enctype="multipart/form-data" action="uploadlist.php" method="post">
+		        	
+				<div class="modal-body">
+						<input type="file" name="listaexerciciosfile" /><br>
+				</div>
+				</form>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Cancelar
+					</button>
+					<button class="btn btn-primary" type="submit">
+						Submeter
+					</button>
+				</div>
+			</div>
+<!-- Modal -->
+
 
       <hr>
 	<footer>

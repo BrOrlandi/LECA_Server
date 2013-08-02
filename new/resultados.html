@@ -19,9 +19,9 @@
 	
 	
     <!-- CSS -->
-    <link href="css/leca.css" rel="stylesheet">
     <link href="bootstrap/css/magic-bootstrap.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/leca.css" rel="stylesheet">
   </head>
 
 <body>
@@ -35,6 +35,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					<a data-toggle="tooltip" title="Listas de Exercícios com Correção Automática" href="#"><img src="img/webicon-144.png" height="40" width="40" style="float:left; margin-right: 20px;" style=""/></a>
 					<a class="brand" data-toggle="tooltip" title="Listas de Exercícios com Correção Automática" href="#">LECA</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
@@ -72,92 +73,181 @@
 		
     <div class="container">
 
-    <h2>Exercícios</h2>
-   
-	<div class="container-fluid">
-	  <div class="row-fluid">
-	    <div class="span4">
-	      <ul class="nav nav-tabs nav-stacked nav-pills ">
-	      	<li class="active"><a href="#tab2" data-toggle="tab">Lista de Exercícios de Programação em C</a></li>
-	      	<li><a href="#tab2" data-toggle="tab">Lista de Conjuntos</a></li>
-	      	<li><a href="#tab2" data-toggle="tab">Lista de C</a></li>
-	      </ul>
-	    </div>
-	    <div class="span8">
-	    	<div class="tab-content">
-				<div class="tab-pane active" id="tab1">
-							<p>
-								I'm in Section 1.
-							</p>
-						</div>
-						<div class="tab-pane" id="tab2">
-			<h3>Lista de Exercícios de Programação em C</h3>
-			<p>	<b>Tema: </b>Programação/Computação<br>
-				<b>Autor: </b>Bruno Orlandi<br>
-				<b>Data: </b>05/12/2006<br>
-				<b>Descrição: </b>Para iniciantes em linguagem C<br>
-				<b>Permutar Exercícios: </b>Sim<br>
-				<b>Tipo de Avaliação: </b>Imediata<br>
-			</p>
-			<h4>Exercícios:</h4>
-			
-			<div class="accordion" id="accordion2">
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Listas de Exercícios</a></li>
+    <li><a href="#tab2" data-toggle="tab">Resultados por Exercício</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <h2>Selecione uma Lista de Exercício:</h2>
+
+<div class="accordion" id="accordion1">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1-1">
+        Lista de Exercícios de Programação em C
+      </a>
+    </div>
+    <div id="collapse1-1" class="accordion-body collapse in">
+      <div class="accordion-inner">
+			<h3>Lista de Exercícios de Programação em C</h3>				
+	  			<div class="row-fluid">
+	    		<div class="span8">
+				<p>	<b>Tema: </b>Programação/Computação<br>
+					<b>Autor: </b>Bruno Orlandi<br>
+					<b>Data: </b>05/12/2006<br>
+					<b>Descrição: </b>Para iniciantes em linguagem C<br>
+					<b>Permutar Exercícios: </b>Sim<br>
+					<b>Tipo de Avaliação: </b>Imediata<br>
+				</p>
+				</div>
+	    		<div class="span4">
+	    			<a class="btn btn-large btn-primary" type="button">Resultados</a><br><br>
+	    			<a href="#submeter" data-toggle="modal" class="btn btn-large btn-primary" type="button">Submeter Avaliação</a>
+				</div>
+				</div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse1-2">
+        Lista de Conjuntos
+      </a>
+    </div>
+    <div id="collapse1-2" class="accordion-body collapse">
+      <div class="accordion-inner">
+        			<h3>Lista de Exercícios de Programação em C</h3>
 				
-			<!-- Inicio exercicio -->
-			<div class="accordion-group">
-				<div class="accordion-heading">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Funções</a>
+	  			<div class="row-fluid">
+	    		<div class="span8">
+				<p>	<b>Tema: </b>Programação/Computação<br>
+					<b>Autor: </b>Bruno Orlandi<br>
+					<b>Data: </b>05/12/2006<br>
+					<b>Descrição: </b>Para iniciantes em linguagem C<br>
+					<b>Permutar Exercícios: </b>Sim<br>
+					<b>Tipo de Avaliação: </b>Imediata<br>
+				</p>
 				</div>
-				<div id="collapseOne" class="accordion-body collapse in">
-					<div class="accordion-inner">
-						<p>	<b>Tema: </b> Teorico<br>
-							<b>Autor: </b>Bruno Orlandi<br>
-							<b>Permutar Alternativas: </b>Não<br>
-						</p>
-						<b>Enunciado:</b>
-						<p class="breadcrumb">	O que é uma função em C?</p>
-					    <p class="breadcrumb">Parte de um programa.</p>
-					    <p class="breadcrumb">Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</p>
-					    <p class="breadcrumb">Uma estrutura da linguagem C que pode ser utilizada para que um programa fique mais organizado.</p>
-					    <p class="breadcrumb">Um bloco de código que pode receber parâmetros, processá-los e retornar alguma coisa.</p>
-					    <p class="breadcrumb">Todas opções acima.<span class="label label-success">Correta</span></p>
+	    		<div class="span4">
+	    			<a class="btn btn-large btn-primary" type="button">Resultados</a><br><br>
+	    			<a href="#submeter" data-toggle="modal" class="btn btn-large btn-primary" type="button">Submeter Avaliação</a>
+				</div>
+				</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    <div class="tab-pane" id="tab2">
+				<h3>Lista de Exercícios de Programação em C</h3>
+
+	  			<div class="row-fluid">
+	    		<div class="span5">
+				<p>	<b>Tema: </b>Programação/Computação<br>
+					<b>Autor: </b>Bruno Orlandi<br>
+					<b>Data: </b>05/12/2006<br>
+					<b>Descrição: </b>Para iniciantes em linguagem C<br>
+					<b>Permutar Exercícios: </b>Sim<br>
+					<b>Tipo de Avaliação: </b>Imediata<br>
+				</p>
+				</div>
+	    		<div class="span7">
+					<b>Avaliações Submetidas: </b>25<br><br><br>
+	    			<a href="#submeter" data-toggle="modal" class="btn btn-large btn-primary" type="button">Submeter Avaliação</a>
+				</div>
+				</div>
+				<h4>Exercícios:</h4>
+				
+				<div class="accordion" id="accordion2">
+					
+				<!-- Inicio exercicio -->
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2-1">Funções</a>
+					</div>
+					<div id="collapse2-1" class="accordion-body collapse in"> <!-- class in é o ativo -->
+						<div class="accordion-inner">
+							<h4>Funções</h4>
+				  			<div class="row-fluid">
+					    		<div class="span5">
+									<p>	<b>Tema: </b> Teorico<br>
+										<b>Autor: </b>Bruno Orlandi<br>
+										<b>Permutar Alternativas: </b>Não<br>
+									</p>
+								<b>Enunciado:</b>
+								<p class="breadcrumb">	O que é uma função em C?</p>
+							    <p class="breadcrumb">Parte de um programa.</p>
+							    <p class="breadcrumb">Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</p>
+							    <p class="breadcrumb">Uma estrutura da linguagem C que pode ser utilizada para que um programa fique mais organizado.</p>
+							    <p class="breadcrumb">Um bloco de código que pode receber parâmetros, processá-los e retornar alguma coisa.</p>
+							    <p class="breadcrumb alternativa-correta">Todas opções acima.</p>
+								</div>
+					    		<div class="span7">
+					    			<img src="http://www.statmethods.net/graphs/images/pie2.jpg">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- Fim exercicio -->
-			<!-- Inicio exercicio -->
-			<div class="accordion-group">
-				<div class="accordion-heading">
-					<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2">Funções</a>
-				</div>
-				<div id="collapseOne2" class="accordion-body collapse in">
-					<div class="accordion-inner">
-						<p>	<b>Tema: </b> Teorico<br>
-							<b>Autor: </b>Bruno Orlandi<br>
-							<b>Permutar Alternativas: </b>Não<br>
-						</p>
-						<b>Enunciado:</b>
-						<p class="breadcrumb">	O que é uma função em C?</p>
-					    <p class="breadcrumb">Parte de um programa.</p>
-					    <p class="breadcrumb">Um bloco de código que pode ser utilizado diversas vezes na execução de um programa.</p>
-					    <p class="breadcrumb">Uma estrutura da linguagem C que pode ser utilizada para que um programa fique mais organizado.</p>
-					    <p class="breadcrumb">Um bloco de código que pode receber parâmetros, processá-los e retornar alguma coisa.</p>
-					    <p class="breadcrumb">Todas opções acima.<span class="label label-success">Correta</span></p>
+				<!-- Fim exercicio -->
+				<!-- Inicio exercicio -->
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2-2">Funções</a>
+					</div>
+					<div id="collapse2-2" class="accordion-body collapse"> <!-- class in é o ativo -->
+						<div class="accordion-inner">
+								
+						<div class="carregando">
+							<img src="img/loading.gif" />
+							<h3>Carregando...</h3>
+						</div>
+						
+
+						</div>
 					</div>
 				</div>
-			</div>
-			<!-- Fim exercicio -->
+				<!-- Fim exercicio -->
+				</div>
+				
+				
+				
 
 
-			</div>
-			</div>
-			
-			</div>
-	    </div>
-	  </div>
-	</div>
+    </div>
+  </div>
+</div>
 
-
+<!-- Modal -->
+			<div id="submeter" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						×
+					</button>
+					<h3 id="myModalLabel">Submeter Nova Avaliação</h3>
+				</div>
+				
+		        <form class="form-horizontal" enctype="multipart/form-data" action="uploadlist.php" method="post">
+		        	
+				<div class="modal-body">
+						<input type="file" name="resultadofile" /><br>
+				</div>
+				</form>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Cancelar
+					</button>
+					<button class="btn btn-primary" type="submit">
+						Submeter
+					</button>
+				</div>
+			</div>
+<!-- Modal -->
 
       <hr>
 	<footer>
@@ -169,7 +259,6 @@
 
 
 	<script src="js/jquery-2.0.3.min.js"></script>
-	<script src="js/leca.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
   </body>

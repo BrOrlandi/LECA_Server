@@ -1,4 +1,8 @@
-  body {
-    padding-top: 60px;
-    /*padding-bottom: 40px;*/
-  }
+.alternativa-correta{
+	background-color: #bbe8c4;
+}
+
+.carregando{
+	width: 100%;
+	text-align:center;
+}
