@@ -1,0 +1,140 @@
+<Usuario Nome="Bruno">
+  <tamanhoR>9</tamanhoR>
+  <UltimaQuestao>8</UltimaQuestao>
+  <R>2</R>
+  <R>1</R>
+  <R>2</R>
+  <R>2</R>
+  <R>3</R>
+  <R>2</R>
+  <R>3</R>
+  <R>1</R>
+  <R>5</R>
+  <ListaQuestoes Titulo="Conjuntos">
+    <Tema>Matemática/Conjuntos</Tema>
+    <Autor>Bruno Orlandi</Autor>
+    <Data></Data>
+    <Obs>Lista de Exercícios sobre conjuntos. Exercícios de vestibulares para o 3º ano do Ensino Médio.</Obs>
+    <Idioma>Português - Brasil</Idioma>
+    <Avaliacao>0</Avaliacao>
+    <Questao Titulo="" id="2">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Sejam os conjuntos numéricos A = {2, 4, 8,12,14}; B = {5,10,15, 20, 25} e C = {1, 2, 3,18, 20} e ∅ o conjunto vazio. É correto afirmar que:</Enunciado>
+      <Correta>28885</Correta>
+      <Tentativas>88397</Tentativas>
+      <Alternativa id="1"> A - C = {-6,1, 2, 4, 5}</Alternativa>
+      <Alternativa id="3"> (A - C) ∩ (B - C) = ∅</Alternativa>
+      <Alternativa id="2"> A∩C = {1, 2, 3, 4, 8,12,14, 20 }</Alternativa>
+      <Alternativa id="0">B∩C = ∅</Alternativa>
+      <Alternativa id="4"> A∪C = {3, 6,11, 20, 34 }</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="0">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Dado que A = {2,4,6} e B = {2,3,5}. Obter n(A⋂B), ou seja, o número de elementos da intersecção entre A e B.</Enunciado>
+      <Correta>11833</Correta>
+      <Tentativas>38352</Tentativas>
+      <Alternativa id="0">0</Alternativa>
+      <Alternativa id="1">1</Alternativa>
+      <Alternativa id="2">2</Alternativa>
+      <Alternativa id="3">3</Alternativa>
+      <Alternativa id="4">4</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="5">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Seja n um número natural, que possui exatamente três divisores positivos, e seja X o conjunto de todos os divisores positivos de n . O número de elementos do conjunto das partes de X é:</Enunciado>
+      <Correta>14443</Correta>
+      <Tentativas>21664</Tentativas>
+      <Alternativa id="0">64</Alternativa>
+      <Alternativa id="1">128</Alternativa>
+      <Alternativa id="2">256</Alternativa>
+      <Alternativa id="3">512</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="8">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Quantos são os subconjuntos de {1, 2, 3, 4, 5, 6} que contêm pelo menos um múltiplo de 3?</Enunciado>
+      <Correta>21142</Correta>
+      <Tentativas>57105</Tentativas>
+      <Alternativa id="4">64</Alternativa>
+      <Alternativa id="0">32</Alternativa>
+      <Alternativa id="1">36</Alternativa>
+      <Alternativa id="3">60</Alternativa>
+      <Alternativa id="2">48</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="1">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Feita uma pesquisa entre 100 alunos, do ensino médio, acerca das disciplinas português, geografia e história, constatou-se que 65 gostam de português, 60 gostam de geografia, 50 gostam de história, 35 gostam de português e geografia, 30 gostam de geografia e história, 20 gostam de história e português e 10 gostam dessas três disciplinas. O número de alunos que não gosta de nenhuma dessas disciplinas é</Enunciado>
+      <Correta>9870</Correta>
+      <Tentativas>29822</Tentativas>
+      <Alternativa id="0">0</Alternativa>
+      <Alternativa id="1">5</Alternativa>
+      <Alternativa id="2">10</Alternativa>
+      <Alternativa id="3">15</Alternativa>
+      <Alternativa id="4">20</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="3">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Uma escola realizou uma pesquisa sobre os hábitos alimentares de seus alunos.
+Alguns resultados dessa pesquisa foram:
+• 82% do total de entrevistados gostam de chocolate;
+• 78% do total de entrevistados gostam de pizza; e
+• 75% do total de entrevistados gostam de batata frita.
+
+Então, é CORRETO afirmar que, no total de alunos entrevistados, a porcentagem dos que gostam, ao mesmo tempo, de chocolate, de pizza e de batata frita é, pelo menos, de</Enunciado>
+      <Correta>22186</Correta>
+      <Tentativas>23970</Tentativas>
+      <Alternativa id="3">40%</Alternativa>
+      <Alternativa id="2">35%</Alternativa>
+      <Alternativa id="1">30%</Alternativa>
+      <Alternativa id="0">25%</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="4">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Se A ⊂ B e B = {10, 23, 12, {1,2}}, então A não pode ser: </Enunciado>
+      <Correta>23406</Correta>
+      <Tentativas>35360</Tentativas>
+      <Alternativa id="3">{15, 10}∩{13,10}</Alternativa>
+      <Alternativa id="2">{10, 23, 12}</Alternativa>
+      <Alternativa id="1">{1}</Alternativa>
+      <Alternativa id="4">{1, 2}</Alternativa>
+      <Alternativa id="0">Ø</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="6">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Dado que A = {2,4,6} e B = {2,3,5}. Obter A⋂B, ou seja, a intersecção entre A e B. </Enunciado>
+      <Correta>47940</Correta>
+      <Tentativas>11833</Tentativas>
+      <Alternativa id="0">{2,4,6}</Alternativa>
+      <Alternativa id="2">{2,4,3,5,6}</Alternativa>
+      <Alternativa id="4">{2}</Alternativa>
+      <Alternativa id="3">{}</Alternativa>
+      <Alternativa id="1">{2,3,5}</Alternativa>
+    </Questao>
+    <Questao Titulo="" id="7">
+      <Tema></Tema>
+      <Autor></Autor>
+      <Enunciado>Todos os candidatos inscritos num vestibular escolheram na ficha de inscrição que preencheram uma única entre as três seguintes situações prévias (em relação ao ano anterior): freqüentou um cursinho, acabou de sair do ensino médio ou estudou sozinho. Por um erro no processamento dos dados, foi gerado um relatório sobre essas respostas apenas com as seguintes informações:
+
+• 800 não fizeram cursinho,
+• 1200 não acabaram de sair do ensino médio,
+• 1500 não ficaram estudando sozinhos durante o último ano.
+
+
+Com isso, conclui-se que o número total de inscritos foi igual a </Enunciado>
+      <Correta>35786</Correta>
+      <Tentativas>43849</Tentativas>
+      <Alternativa id="1">1750</Alternativa>
+      <Alternativa id="0">1250</Alternativa>
+      <Alternativa id="3">3500</Alternativa>
+      <Alternativa id="2">2500</Alternativa>
+      <Alternativa id="4">4750</Alternativa>
+    </Questao>
+  </ListaQuestoes>
+</Usuario>

@@ -6,3 +6,12 @@
 	width: 100%;
 	text-align:center;
 }
+
+.active-accordion-leca{
+	background-color: #259C29;
+	color: #fff;
+}
+.active-accordion-leca:hover{
+	background-color: #259C29;
+	color: #fff;
+}
