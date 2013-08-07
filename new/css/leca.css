@@ -15,3 +15,7 @@
 	background-color: #259C29;
 	color: #fff;
 }
+
+.graficos{
+	overflow: auto;
+}

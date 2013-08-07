@@ -1,6 +1,14 @@
-
+ 
 //global
 var listas;
+var GoogleChartReady = false;
+
+function gchartready(){
+	GoogleChartReady = true;
+}
+
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(gchartready);
 
 $(document).ready(function (){
 	
@@ -204,7 +212,7 @@ function atualiza_exercicios(i_lista){
 		str += '<b>Enunciado:</b><p>'+ exercicios[i].enunciado +'</p>';
 		str += '<div id="exercicio_alternativas'+i+'"></div>';
 		str += '</div>';
-		str += '<div id="grafico_'+i+'" class="span7">';
+		str += '<div id="grafico_'+i+'" class="span7 graficos">';
 		str += '<img src="http://www.statmethods.net/graphs/images/pie2.jpg">';
 		str += '</div></div>';
 		str += '</div></div></div>';
@@ -216,6 +224,7 @@ function atualiza_exercicios(i_lista){
 }
 
 function clicou_exercicio(e){
+	console.log('clicou_exercicio');
 	var lista = $(e.target).attr('data-lista');
 	var ex = $(e.target).attr('data-exercicio');
 	
@@ -227,20 +236,15 @@ function clicou_exercicio(e){
 			url: "./php/get.php",
 			data: {'get':'get_alternativas','exercicio':eid},
 			beforeSend: function(){
-				$(select).hide();
-				$(select).after(get_loading_html('Carregando Exercícios...'));
+				$(select).html(get_loading_html('Carregando Exercícios...'));
 			},
 			error: function(jqxhr,status,error){
-				$(select).next().remove();
-				$(select).show();
-				alert(status+'\n'+error);
+				$(select).html(status+' : '+error);
 			},
 			success: function(data,status){
-				$(select).next().remove();
-				$(select).show();
 				var json = JSON.parse(data);
 				if(json.status != 0){
-					alert('Erro: '+json.status+'\n'+json.message);
+					$(select).html('Erro: '+json.status+'\n'+json.message);
 				}
 				listas[lista].exercicios[ex].alternativas = json.obj;
 				atualizar_alternativas(lista,ex);
@@ -254,6 +258,8 @@ function clicou_exercicio(e){
 }
 
 function atualizar_alternativas(i_lista,i_exercicio){
+	console.log('atualizar_alternativas');
+	get_assinaladas_por_exercicio(i_lista,i_exercicio);
 	var select = '#exercicio_alternativas'+i_exercicio;
 	
 	$(select).html('');
@@ -269,6 +275,60 @@ function atualizar_alternativas(i_lista,i_exercicio){
 			str += '<p class="breadcrumb">'+alternativas[i].texto+'</p>';
 	}
 	$(select).html(str);
+}
+
+function get_assinaladas_por_exercicio(lista,ex){
+	console.log('get_assinaladas_por_exercicio');
+	
+	if(listas[lista].exercicios[ex].alternativas['0'].respostas == null){
+		var leid = listas[lista].leid;
+		var eid = listas[lista].exercicios[ex].eid;
+		var select = '#grafico_'+ex;
+		$.ajax({
+			type: 'GET',
+			url: "./php/get.php",
+			data: {'get':'get_assinaladas_por_exercicio','lista':leid,'exercicio':eid},
+			beforeSend: function(){
+				$(select).html(get_loading_html('Carregando Respostas Submetidas...'));
+			},
+			error: function(jqxhr,status,error){
+				$(select).html(status+' : '+error);
+			},
+			success: function(data,status){
+				var json = JSON.parse(data);
+				if(json.status != 0){
+					$(select).html('Erro: '+json.status+'\n'+json.message);
+				}
+				var size = json.obj.length;
+				var respostas = json.obj;
+				for(var i=0;i<size;i++){
+					listas[lista].exercicios[ex].alternativas[respostas[i]['id']].respostas = respostas[i]['contagem'];
+				}
+				exibir_grafico(lista,ex);
+			}
+		});
+	}
+	else{
+		exibir_grafico(lista,ex);
+	}
+}
+
+function exibir_grafico(lista,ex){
+	var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Alternativas');
+    data.addColumn('number', 'Respostas');
+    var alternativas = listas[lista].exercicios[ex].alternativas;
+    var size = alternativas.length;
+    for(var i=0;i<size;i++){
+    	data.addRow([alternativas[i].texto,parseInt(alternativas[i].respostas)]);
+    }
+    
+	var options = {'title':'Alternativas assinaladas',
+                       'width':600,
+                       'height':800};
+	var chart = new google.visualization.PieChart(document.getElementById('grafico_'+ex));
+	chart.draw(data, options);
+    
 }
 
 function reset_submit(){

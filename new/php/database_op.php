@@ -305,8 +305,6 @@ function get_alternativas($db,$eid){
 	
 	$rows = $stmt->fetchAll();
 	
-	$size = sizeof($rows);
-	
 	retorna(0,'Sucesso!',$rows);
 }
 
@@ -424,8 +422,67 @@ function insert_resposta_alternativa($db,$resposta,$subid){
 		retorna(16,'Erro '.$ex->getCode() . ' : ' . $ex->getMessage(),$query_params);
 	}	
 }
-/*
-function get_
 
-SELECT max(subid) as subid,S.usuario,S.leid FROM Submissoes S WHERE leid=12 GROUP BY S.usuario,S.leid ORDER BY subid;
-*/
+function get_submissoes($db,$leid){
+	$query = "SELECT count(*) AS submissoes 
+	FROM (
+	SELECT max(subid) as subid,S.usuario 
+	FROM Submissoes S 
+	WHERE leid = :leid 
+	GROUP BY S.usuario) AS S;";
+		
+	$query_params = array( 
+		':leid' => $leid
+    );  
+		
+	try{
+		$stmt = $db->prepare($query);
+		$result = $stmt->execute($query_params);
+	}
+	catch(PDOException $ex){
+		retorna(17,'Erro '.$ex->getCode() . ' : ' . $ex->getMessage(),$query_params);
+	}
+	
+	$row = $stmt->fetch();
+	
+	retorna(0,'Sucesso!',$row);
+}
+
+
+function get_assinaladas_por_exercicio($db,$leid,$eid){
+	$query = "SELECT A.id,count(RA.assinalou) AS contagem
+		FROM Alternativas A 
+		JOIN Exercicios E ON E.eid = A.eid
+		LEFT JOIN RespostasAlternativas RA ON RA.eid = E.eid AND RA.assinalou = A.id AND RA.subid IN
+		(
+			SELECT max(S.subid) AS subid 
+			FROM Submissoes S 
+			WHERE (S.leid = :leid) 
+			GROUP BY S.usuario 
+			ORDER BY subid
+			)
+		
+		WHERE E.eid = :eid
+		
+		GROUP BY A.id,E.eid
+		ORDER BY A.id;";
+		
+	$query_params = array( 
+		':leid' => $leid,
+		':eid' => $eid
+    );  
+		
+	try{
+		$stmt = $db->prepare($query);
+		$result = $stmt->execute($query_params);
+	}
+	catch(PDOException $ex){
+		retorna(18,'Erro '.$ex->getCode() . ' : ' . $ex->getMessage(),$query_params);
+	}
+	
+	$rows = $stmt->fetchAll();
+	
+	retorna(0,'Sucesso!',$rows);
+}
+
+

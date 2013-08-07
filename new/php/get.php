@@ -19,7 +19,7 @@
 			
 			case 'get_alternativas':
 				if(!isset($_GET['exercicio'])){
-					retorna(56,'Exercicio não especificada');
+					retorna(56,'Exercício não especificada');
 				}
 				$eid = $_GET['exercicio'];
 				get_alternativas($db,$eid);
@@ -31,6 +31,18 @@
 				}
 				$leid = $_GET['lista'];
 				get_submissoes($db,$leid);
+			break;
+			
+			case 'get_assinaladas_por_exercicio':
+				if(!isset($_GET['lista'])){
+					retorna(58,'Lista não especificada');
+				}
+				$leid = $_GET['lista'];
+				if(!isset($_GET['exercicio'])){
+					retorna(59,'Exercício não especificada');
+				}
+				$eid = $_GET['exercicio'];
+				get_assinaladas_por_exercicio($db,$leid,$eid);
 			break;
 			
 			default:
